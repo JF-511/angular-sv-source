@@ -1,0 +1,86 @@
+<div id="register" class="row">
+    <div class="col-md-4 col-md-offset-8 login-outer">
+        <div class="panel panel-default login-inner">
+            <div class="login-title">
+                <h2>Sign Up</h2>
+            </div>                    
+            <div class="panel-body">
+                <form  ng-show="registered==''" accept-charset="UTF-8" ng-submit="signUp()" role="form" name="form" novalidate>
+                <fieldset>
+                    <div class="form-group">
+                        <div ng-show="form.$submitted && error">
+                            <div class="alert alert-danger">                            
+                             <a >{{error}}</a></div>                             
+                         </div>
+                    </div>
+                    <div class="form-group">                        
+                        <div class=" col-xs-6 col-md-6 ">
+                            <input class="form-control" placeholder="{{::lang.signup.name.first}}" ng-model="firstname" name="first_name" type="text" required focus-me="" namevalid>
+                        </div>
+                        <div class=" col-xs-6 col-md-6">
+                            <input class="form-control col-xs-6 col-md-8" placeholder="{{::lang.signup.name.last}}" ng-model="lastname" name="last_name" type="text" required namevalid>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div ng-show="!form.$valid && form.$submitted">
+                            <div class="alert alert-danger" ng-show="form.first_name.$invalid || form.first_name.$error.namevalid || form.last_name.$invalid || form.last_name.$error.namevaild">                            
+                             <a >{{::lang.signup.name.error}}</a>
+                             </div>
+                         </div>
+                    </div> 
+                    <div class="form-group">
+                        <input class="form-control" placeholder="{{::lang.signup.email.title}}" name="email" type="email" ng-model="email" required emailvalid>
+                        <div ng-show="!form.$valid && form.$submitted">
+                            <div class="alert alert-danger" ng-show="form.email.$invalid || form.email.$error.emailvalid">
+                                <a >{{::lang.signup.email.error}}</a>
+                            </div>
+                        </div>
+                    </div>                 
+                    <div class="form-group">
+                        <input class="form-control" placeholder="{{::lang.signup.password.title}}" name="password" type="password" ng-model="password" required>
+                        <div ng-show="!form.$valid && form.$submitted">
+                            <div class="alert alert-danger" ng-show="form.password.$invalid">
+                                <a >{{::lang.signup.password.require}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="{{::lang.signup.password.confirm}}" name="confirmpassword" type="password" ng-model="confirmpassword" required notequals="password">
+
+                        <div ng-show="!form.$valid && form.$submitted">
+                            <div class="alert alert-danger" ng-show="form.confirmpassword.$invalid || form.confirmpassword.$error.notequals">
+                                <a >{{::lang.signup.password.error}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="{{::lang.signup.company.title}}" name="company" type="text" ng-model="company" >
+                        <!--
+                        <div ng-show="!form.$valid && form.$submitted"> 
+                            <div class="alert alert-danger" ng-show="form.company.$invalid">
+                                <a >{{::lang.signup.company.require}}</a>
+                            </div>
+                        </div> -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <input class="form-control" placeholder="{{::lang.signup.phone.title}}" name="phone_num" type="text" ng-model="phoneNum" phonevalid required>    
+
+                        <div ng-show="!form.$valid && form.$submitted"> 
+                            <div class="alert alert-danger" ng-show="form.phone_num.$invalid || form.phoneNum.$error.phonevalid">
+                                <a >{{::lang.signup.phone.error}}</a>
+                            </div>       
+                        </div>             
+                    </div>                         
+                    <input class="btn btn-lg btn-info btn-block" type="submit" value="Sign up">
+                </fieldset>
+                </form>
+                  <div ng-show="registered!=''">
+                        <div class="alert alert-success">
+                            <strong ><span>{{registered}}</span></strong><br>
+                            Click <a href="#/signin">here</a> to signin. 
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

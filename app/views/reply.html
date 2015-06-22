@@ -1,0 +1,310 @@
+<div id="report" >        
+
+	<div class="col-md-12 view pad30" id="replyform">
+                
+                <div class="question top30" 
+                    ng-repeat="question in jsonObj.questionDtos track by $index" 
+                   >
+                 
+                    <div  class="sections" ng-init="qIndex = $index;" >
+                        <div class="q-title">
+                            <div class="icon " ng-bind-html="question.orderSequence"></div>
+                            <div class="text">{{question.text}}</div>
+                        </div>
+                        <div class="q-body q-angle-double-up" >
+                                  
+                            <div   ng-switch on="question.questionTypeDto.questionType">
+                            	<div ng-switch-when=" STAR_RATING_BAR">                                      
+                                     <ng-include src="getTemplateName(question, '');"></ng-include>
+                                     <div class="row subkey" ng-include="'KEYWORDS0.html'">     
+                                     </div>
+                                </div> 
+
+                                <div  ng-switch-when="LIKERT_SCALE_GOOD">
+                                       
+                                     <ng-include src="getTemplateName(question, '');"></ng-include>
+                                     <div class="row subkey" ng-include="'KEYWORDS0.html'">     
+                                      </div>
+                                </div> 
+
+                                <div  ng-switch-when="LIKERT_SCALE_AGREE">
+                                       
+                                     <ng-include src="getTemplateName(question, '');"></ng-include>
+                                     <div class="row subkey" ng-include="'KEYWORDS0.html'">     
+                                      </div>
+                                </div> 
+
+                                <div  ng-switch-when="LIKERT_SCALE_LIKELY">
+                                       
+                                     <ng-include src="getTemplateName(question, '');"></ng-include>
+                                     <div class="row subkey" ng-include="'KEYWORDS0.html'">     
+                                      </div>
+                                </div> 
+
+                                <div  ng-switch-when="LIKERT_SCALE_SATISFIED">
+                                       
+                                     <ng-include src="getTemplateName(question, '');"></ng-include>
+                                     <div class="row subkey" ng-include="'KEYWORDS0.html'">     
+                                      </div>
+                                </div> 
+
+                                <div ng-switch-when="NUMBER_SCALE_1_5">
+                                       
+                                     <ng-include src="getTemplateName(question, '');"></ng-include>
+                                     <div class="row subkey" ng-include="'KEYWORDS0.html'">     
+                                     </div>
+                                </div> 
+                                <div ng-switch-when="NUMBER_SCALE_1_10">
+                                       
+                                     <ng-include src="getTemplateName(question, '');"></ng-include>
+                                     <div class="row subkey" ng-include="'KEYWORDS0.html'">     
+                                     </div>
+                                </div>   
+
+                                <div ng-switch-when="NUMBER_SCALE_0_5">
+                                       
+                                     <ng-include src="getTemplateName(question, '');"></ng-include>
+                                     <div class="row subkey" ng-include="'KEYWORDS0.html'">     
+                                     </div>
+                                </div>   
+
+                                <div ng-switch-when="NUMBER_SCALE_0_10">
+                                       
+                                     <ng-include src="getTemplateName(question, '');"></ng-include>
+                                     <div class="row subkey" ng-include="'KEYWORDS0.html'">     
+                                     </div>
+                                </div>
+
+                                <div ng-switch-when="WEEK_DAYS">
+                                       
+                                     <ng-include ng-if="question.answerOptionDtos.length  > 0" src="getTemplateName(question, '');"></ng-include>
+                                     <div class="row subkey" ng-include="'KEYWORDS0.html'">     
+                                     </div>
+                                </div>  
+
+                                <div  ng-switch-when="MONTH">
+                                       
+                                     <ng-include src="getTemplateName(question, '');"></ng-include>
+                                      <div class="row subkey" ng-include="'KEYWORDS0.html'">     
+                                     </div>
+                                </div> 
+
+                                <div  ng-switch-when="COMBO">
+                                       
+                                     <ng-include src="getTemplateName(question, '');"></ng-include>
+                                      <div class="row subkey" ng-include="'KEYWORDS0.html'">     
+                                     </div>
+                                </div> 
+
+                                <div ng-switch-when="PROGRESS_BAR_10">
+                                       
+                                     <ng-include src="getTemplateName(question, '');"></ng-include>
+                                     <div class="row subkey" ng-include="'KEYWORDS0.html'">     
+                                     </div>
+                                </div>  
+
+                                <div ng-switch-when="PROGRESS_BAR_100">
+                                       
+                                     <ng-include src="getTemplateName(question, '');"></ng-include>
+                                     <div class="row subkey" ng-include="'KEYWORDS0.html'">     
+                                     </div>
+                                </div>        
+
+                                <div ng-switch-default>
+                                     <div ng-repeat="answerOpt in question.answerOptionDtos track by $index">
+                                    
+                                        <ng-include src="getTemplateName(question, '');"></ng-include>
+                                        <div class="row subkey" ng-include="'KEYWORDS.html'">     
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+<div class="col-md-12 view" >
+        <div class="row">
+            <div class="col-md-12 reload text-center">              
+                    <button class="publish " ng-click="save()">Submit</button>
+            </div>
+        </div>       
+      
+    </div>
+    </div>
+
+            			<!-- RADIO_BUTTON edit template -->
+                        <script type="text/ng-template" id="RADIO_BUTTON.html">
+                                <div class="radio" >
+                                    <input type="radio" name="q{{pre}}-{{question.orderSequence}}" id="q{{pre}}-{{question.orderSequence}}-{{$index+1}}" ng-model="question.selected" value="{{$index}}">
+                                    <label class="pull-left" for="q{{pre}}-{{question.orderSequence}}-{{$index+1}}" ><span></span>
+                                        <span  ng-bind-html="answerOpt.value"></span>
+                                    </label>
+                                    
+                                </div>                               
+                        </script>
+
+
+                        <!-- RATING template -->
+                        <script type="text/ng-template" id="STAR_RATING_BAR.html">
+                            <div class="row">        
+                                <div  class="rating pull-left" ng-if="question.answerOptionDtos.length > 0"  id="q{{pre}}-{{question.orderSequence}}" ><rating ng-model="question.selected" max="question.answerOptionDtos.length"  state-on="'fa fa-star'" state-off="'fa fa-star-o'"></rating>
+                                </div>                                
+                                
+                            </div>                             
+                                              
+                        </script>
+
+                        <!-- SELECT template -->
+                        <script type="text/ng-template" id="WEEK_DAYS.html">    
+                            <div class="row">   
+                                <div class="col-md-6">     
+
+                                <ui-select ng-model="question.selected" theme="selectize" id="q{{pre}}-{{question.orderSequence}}-{{$index}}"
+                                >
+                                    <ui-select-match placeholder="Multiple Choice">{{question.selected.value}}</ui-select-match>
+                                    <ui-select-choices repeat="option in question.answerOptionDtos | filter: $select.search">
+                                    <span  no-enter="true" ng-model="option.value" ng-bind-html="option.value | highlight: $select.search"></span>
+
+                                    </ui-select-choices>
+                                </ui-select>      
+                                  
+                                </div>
+                                                
+                            </div>                           
+                           
+                            
+                        </script>
+ 
+                        <script type="text/ng-template" id="TIME.html">                           
+                            <div class="row time">
+                                <div class="radio" >
+                                        <input type="radio" name="q{{pre}}-{{question.orderSequence}}" id="q{{pre}}-{{question.orderSequence}}-{{$index+1}}" value="{{$index}}" ng-model="question.selected">
+                                        <label class="pull-left" for="q{{pre}}-{{question.orderSequence}}-{{$index+1}}"><span></span>
+                                            <div  ng-include="'TIME-T.html'" ng-init="val1=timelist[$index].min" class="col-md-5">              
+                                            </div>
+                                            <div class="col-md-1">~</div>
+                                            <div  ng-include="'TIME-T.html'" ng-init="val1=timelist[$index].max" class="col-md-5">              
+                                            </div>
+                                            <input type="hidden" ng-model="answerOpt.value" ng-bind-html="answerOpt.value">
+                                        </label>
+                                       
+                                </div>
+                                      
+                                </div>
+                    
+                            </div>
+                        </script>
+
+                        <!-- TIME template -->
+                        <script type="text/ng-template" id="TIME-T.html">   
+                            <div class="input-group mar20 ">                        
+                                    <timepicker-pop id="q-time-{{pre}}-{{question.orderSequence}}-{{$index}}" ng-model="val1" input-time="today" class="input-group pull-left" disabled="disabled"
+                                show-meridian='ismeridian'> </timepicker-pop>
+                            </div>
+                             
+                        </script>   
+
+                        <!-- CALENDAR template -->
+                        <script type="text/ng-template" id="CALENDAR.html">
+                           
+                              <div class="row">    
+                              <div class="col-md-12">                            
+                                    <p class="input-group calendar pull-left ">
+                                      <input type="text" name="q{{pre}}-{{question.orderSequence}}{{$index}}" id="q{{pre}}-{{question.orderSequence}}{{$index}}"  class="form-control" datepicker-popup="{{dateformat}}" ng-model="question.selected" is-open="answerOpt.opend" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" />
+                                      <span class="input-group-btn">
+                                          <button type="button" class="btn btn-default" ng-click="open($event, answerOpt)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                        </span>
+        
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                           
+                        </script>
+
+                        <!-- TEXTBOX template-->
+                        <script type="text/ng-template" id="TEXTBOX.html">
+                             <div class="areapanel">
+                                <textarea class="col-sm-9" ng-model="question.selected"  name="q{{pre}}-{{question.orderSequence}}{{$index}}" id="q{{pre}}-{{question.orderSequence}}{{$index}}"  ></textarea>   
+                                                         
+                            </div>     
+                          
+                        </script>  
+
+                        <!-- SLIDER template-->
+                        <script type="text/ng-template" id="PROGRESS_BAR_10.html">
+                             <div class="row">
+                                <div class="col-md-8 q-slider">
+                                    <div ng-bind-html="question.answerOptionDtos[0].value" class="sliderl pull-left"></div>
+                                      <slider class="pull-left" slider-id="q{{pre}}-{{question.orderSequence}}{{$index}}"                                       
+                                        value="50"
+                                        min="question.answerOptionDtos[0].value"
+                                        max="question.answerOptionDtos[10].value"
+                                        step="question.answerOptionDtos[1].value"  name="q{{pre}}-{{question.orderSequence}}{{$index}}" ng-model="question.selected" > </slider>
+                                    <div class="sliderr pull-left" ng-bind-html = "question.answerOptionDtos[10].value"></div>
+                                    
+                                </div>
+                                
+                           </div>                             
+                        </script>
+
+                        <!-- LIKERT_SCALE_5 tempate -->
+                        <script type="text/ng-template" id="LIKERT_SCALE_GOOD.html">
+                            <div class="row" ng-if="question.answerOptionDtos.length > 0">                            
+                                    <feedback-icon class="feedback pull-left" feedback-model="question.answerOptionDtos" ng-model="question.selected" ng-name="q{{pre}}-{{question.orderSequence}}{{$index}}" ></feedback-icon>                                   
+
+                            </div>                                            
+                                           
+                        </script> 
+
+                        <!-- NUMBER_SCALE_0_5 template-->
+                        <script type="text/ng-template" id="NUMBER_SCALE_0_5.html">
+                            <div class="row" ng-if="question.answerOptionDtos.length > 0">                             
+                                <numberic-scale class="numberscale pull-left" ng-name="q{{pre}}-{{question.orderSequence}}{{$index}}" ng-scale="{{question.answerOptionDtos.length}}" bind-model="question.answerOptionDtos" ng-model="question.selected"></numberic-scale>
+                            </div>                            
+                        </script> 
+
+                        <script type="text/ng-template" id="CHECK_BOX.html">
+                            <div class="checkbox">
+                                <input type="checkbox" id="q{{pre}}-{{question.orderSequence}}{{$index}}" name="q{{pre}}-{{question.orderSequence}}" ng-model="answerOpt.selected" value="{{$index}}"> 
+                                <label  for="q{{pre}}-{{question.orderSequence}}{{$index}}" class="fa fa-check pull-left">
+                             
+                                <span ng-bind-html="answerOpt.value"></span>
+                                </label>
+                               
+                            </div>                          
+                        </script>
+
+                        <!-- TEXTFIELD template -->
+                        <script type="text/ng-template" id="TEXTFIELD.html">
+                            <div class="row">
+                                <div class="form-group inline-block example-text pull-left">
+                                    <input type="text" ng-model="question.selected" class="form-control" placeholder="Text Field">
+                                </div>                               
+                            </div>                           
+                        </script>
+
+                   <!--     <script type="text/ng-template" id="note.html">
+                            <div >
+                                <p contenteditable ng-model="answerOpt.value"></p>
+                            </div>
+                        </script>  </script> -->
+                        <script type="text/ng-template" id="KEYWORDS.html">
+                            <div class="row keywordspart">
+                                <div ng-repeat="key in answerOpt.answerOptionKeywordDtos| orderBy:'-highFrequencyRank':true"
+                                                class="key-label">
+                                    <span class="label label-default">{{key.value}}</span>
+                                </div>
+                            </div>
+                        </script>
+
+                        <script type="text/ng-template" id="KEYWORDS0.html">
+                            <div class="row keywordspart">
+                                <div ng-repeat="key in answerOpt.answerOptionKeywordDtos|orderBy:'-highFrequencyRank':true"
+                                                class="key-label">
+                                    <span class="label label-default">{{key.value}}</span>
+                                </div>
+                            </div>
+                        </script>

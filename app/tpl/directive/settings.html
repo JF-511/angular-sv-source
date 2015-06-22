@@ -1,0 +1,12 @@
+<div class="flex"><span id="settings"><i class="fa fa-cog txt-color-blueDark"></i></span>
+    <form>
+      <h4 class="head"><span class="label ">Theme Options</span></h4>
+        <ui-select ng-model="skin" theme="selectize"
+                                     on-select="setSkin($item, $model)" >
+              <ui-select-match placeholder="Theme">{{$select.selected.value}}</ui-select-match>
+              <ui-select-choices repeat="option in skins | filter: $select.search">
+                <span  no-enter="true" ng-model="option.value" ng-bind-html="option.value | highlight: $select.search"></span>
+              </ui-select-choices>
+        </ui-select>
+    </form>
+</div>

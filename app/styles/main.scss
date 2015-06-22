@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'PTSans-Regular';
+  src: url('../fonts/PTSans-Regular.eot?#iefix') format('embedded-opentype'),  url('../fonts/PTSans-Regular.woff') format('woff'), url('../fonts/PTSans-Regular.ttf')  format('truetype'), url('../fonts/PTSans-Regular.svg#PTSans-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+	
+@font-face {
+  font-family: 'PTSans-Bold';
+  src: url('../fonts/PTSans-Bold.eot?#iefix') format('embedded-opentype'),  url('../fonts/PTSans-Bold.woff') format('woff'), url('../fonts/PTSans-Bold.ttf')  format('truetype'), url('../fonts/PTSans-Bold.svg#PTSans-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ArialNarrow';
+  src: url('../fonts/ArialNarrow.eot?#iefix') format('embedded-opentype'),  url('../fonts/ArialNarrow.woff') format('woff'), url('../fonts/ArialNarrow.ttf')  format('truetype'), url('../fonts/ArialNarrow.svg#ArialNarrow') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ArialMT';
+  src: url('../fonts/ArialMT.eot?#iefix') format('embedded-opentype'),  url('../fonts/ArialMT.woff') format('woff'), url('../fonts/ArialMT.ttf')  format('truetype'), url('../fonts/ArialMT.svg#ArialMT') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import "../bower_components/jquery-ui/themes/smoothness/jquery-ui.css";
+@import "../bower_components/angular-ui-select/dist/select.css";
+@import "http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css";
+@import "../bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css";    
+
+.btn-info{
+	color:#ffffff;background-color:#3498db;border-color:#3498db;
+}
+.btn-info:hover, .btn-info:focus, .btn-info.focus, .btn-info:active, .btn-info.active, .open>.dropdown-toggle.btn-info {
+color: #ffffff;
+background-color: #217dbb;
+border-color: #2077b2;
+}
+
+@import "alertify.css";
+@import "themes/bootstrap.css";
+@import "style.scss";
+@import "media.scss";

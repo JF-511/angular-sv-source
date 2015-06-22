@@ -1,0 +1,47 @@
+<div class="row" id="login">
+    <div class="col-md-4 col-md-offset-8 login-outer">
+        <div class="panel panel-default login-inner">
+            <div class="login-title">
+                <h2>Log in</h2>
+            </div>                    
+            <div class="panel-body">
+                <form accept-charset="UTF-8" ng-submit="signin()" role="form" name="form" novalidate>
+                <fieldset>
+                    <div class="form-group">                        
+                        <input class="form-control" placeholder="{{::lang.signin.email.title}}" ng-model="email" name="email"  focus-me=""  type="text" required emailvalid>
+                        <div ng-show="!form.$valid && form.$submitted">
+                            <div class="alert alert-danger" ng-show="form.email.$invalid || form.input.$error.emailvalid">
+                                <a >{{::lang.signin.email.error}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">                        
+                        <input class="form-control" placeholder="{{::lang.signin.password.title}}" ng-model="password" name="password" type="password" required>
+                       
+                       <div ng-show="!form.$valid && form.$submitted">
+                            <div class="alert alert-danger" ng-show="form.password.$invalid">
+                                <a >{{::lang.signin.password.error}}</a>
+                            </div>
+                        </div>
+                    </div>     
+                    <div class="form-group">
+                        <div ng-show="form.$submitted && error && form.$valid">
+                            <div class="alert alert-danger">                            
+                             <a >{{error}}</a></div>                             
+                         </div>
+                    </div>                       
+                    <input class="btn btn-lg btn-info btn-block" type="submit" value="Log in">
+                    
+                    <div class="checkbox">
+                                <input type="checkbox" id="rememberme" name="" value=""> 
+                                <label for="rememberme" class="fa fa-check"><span  ng-model="rememberme">Remember Me</span></label>                          
+
+                        <a href="#" class="trouble" >Trouble?</a> 
+                    </div>
+                    
+                </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

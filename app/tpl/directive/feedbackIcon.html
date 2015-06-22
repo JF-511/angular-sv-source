@@ -1,0 +1,11 @@
+<div>
+	<ul class="smiles clearfix">
+		<li ng-repeat="r in feedbackModel track by $index" ng-class="{active :selected == $index}"  name="{{ngName}}-$index" ng-click="feed($index)" >
+	        <span class="img"></span> 
+	        <div class="title" ng-bind-html="r.value">
+	        		
+	        </div>       
+	    </li>	    
+	</ul>
+
+</div>

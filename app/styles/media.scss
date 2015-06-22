@@ -1,0 +1,146 @@
+
+@media(max-width:1100px) {
+	#anwserwidget > div {
+		margin-left:0;
+	}
+
+	#anwserwidget > div:nth-of-type(4) {
+	  margin-left:0;  
+	  margin-right:30px;
+	}
+
+	#anwserwidget > div:nth-of-type(6) {
+	  margin-left:0px;  
+	}
+	#anwserwidget > div:nth-of-type(4) .type {
+		padding:8px 40px;
+	}
+}
+
+@media(max-width:990px) {
+	#anwserwidget > div {
+		margin-left:20px!important;
+	}
+
+}
+
+
+@media(min-width:768px) {
+   
+    header .intro-text .name {
+        font-size: 4.75em;
+    }
+
+    header .intro-text .skills {
+        font-size: 1.75em;
+    }
+}
+
+@media(min-width:768px) {
+    .navbar-fixed-top {
+        padding: 25px 0;
+        -webkit-transition: padding .3s;
+        -moz-transition: padding .3s;
+        transition: padding .3s;
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        font-size: 2em;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+
+    .navbar-fixed-top.navbar-shrink {
+        padding: 10px 0;
+    }
+
+    .navbar-fixed-top.navbar-shrink .navbar-brand {
+        font-size: 1.5em;
+    }
+}
+
+
+@media(min-width:767px) {
+    #portfolio .portfolio-item {
+        margin: 0 0 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  /* line 227, ../scss/style.scss */
+  .navbar.navbar-default .nav.navbar-nav.left {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  /* line 227, ../scss/style.scss */
+  .navbar.navbar-default .nav.navbar-nav.left {
+    float: left;
+    margin-top: 15px;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 236, ../scss/style.scss */
+  .navbar.navbar-default .nav.navbar-nav.right {
+    width: 50%;
+    padding: 15px;
+    float: left;
+    text-align: right;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  /* line 236, ../scss/style.scss */
+  .navbar.navbar-default .nav.navbar-nav.right {
+    float: right;
+    margin-top: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+	.modal-dialog {
+	  width:700px;
+	}
+	
+	.modal-lg {
+		width:750px;
+	}
+
+  .modal-sm {
+    width:400px;
+  }
+
+}	
+
+@media (max-width:1095px) {
+  .navbar-toggle {
+    display:block!important;
+  }
+
+  .navbar-header {
+    float:none!important;
+  }
+
+  #dashheader > ul.navbar-nav:nth-of-type(2) {
+    display:none;
+  }
+
+  #dashheader > ul.in {
+    display:block!important;
+  }
+
+  #bs-example-navbar-collapse-1 {
+    display:none!important;
+  }
+
+  #bs-example-navbar-collapse-1.in {
+    display:block!important;
+  }
+}
+
+@media (min-width: 640px) and (max-width:991px) {
+  .col-md-offset-8 {
+    margin-left:50%;
+  }
+}

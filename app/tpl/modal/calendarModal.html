@@ -1,0 +1,37 @@
+    
+            <form role="form" name="calendarForm" id="calendarForm">
+            <div class="row">
+
+               
+                    <div class="form-group date">
+                       <div class="input-group">
+                       
+                       <input type="text" tooltip-placement="top" tooltip="From date"   name="start-date" id="start-date" placeholder="from date" class="form-control" datepicker-popup="" ng-model="report.startDate" is-open="sopend" min-date="'2000-01-01'" max-date="'2020-01-01'" datepicker-options="" close-text="Close" />
+                                                   <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open($event, '1')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                        </div>
+                                                
+                    </div>
+                    
+                    <div class="form-group date">
+                      <div class="input-group">
+                       <input type="text" tooltip-placement="top" tooltip="To date"   name="end-date" id="end-date" placeholder ="to date" class="form-control" datepicker-popup="" ng-model="report.endDate" is-open="eopend" min-date="'2000-01-01'" max-date="'2020-01-01'" datepicker-options="" close-text="Close" />
+                                                   <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open($event, '2')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span></div>
+                    </div>    
+                 
+                </div>
+               
+           <div class="row form-group modal-bottom">
+              <div class="col-sm-offset-2 col-sm-10">
+                <div class="pull-right">                 
+                  <input type="submit" id="btn-login" ng-click="confirm();" class="btn btn-success" value="Continue">                
+                </div>
+              </div>
+            </div>      
+
+            </form>
+
+<button class="cancel modal-close" ng-click="cancel();"><i class="fa fa-times"></i></button>

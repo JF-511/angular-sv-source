@@ -1,0 +1,105 @@
+ <div class="modal-dialog">      
+            <form role="form" name="publishForm" id="publishForm">
+            <div class="row">
+
+                <div class="col-md-6 region">
+                <div>
+                  <legend>Survey</legend>
+                   <div class="form-group">
+                      <input class="form-control" type="text" 
+                         placeholder="Name" ng-model="survey.surveyName">
+                   </div>
+
+                   <div class="form-group">
+                      <textarea class="form-control" 
+                         placeholder="Description" ng-model="survey.surveyDescription"></textarea> 
+                   </div>
+
+                    <div class="form-group date">
+                       <div class="input-group">
+                       <input type="text" name="start-date" id="start-date" placeholder="Start date" class="form-control" datepicker-popup="" ng-model="survey.startDate" is-open="sopend" min-date="'2000-01-01'" max-date="'2020-01-01'" datepicker-options="" close-text="Close" />
+                                                   <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open($event, '1')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                        </div>
+                                                
+                    </div>
+                    
+                    <div class="form-group date">
+                      <div class="input-group">
+                       <input type="text" name="end-date" id="end-date" placeholder ="End date" class="form-control" datepicker-popup="" ng-model="survey.endDate" is-open="eopend" min-date="'2000-01-01'" max-date="'2020-01-01'" datepicker-options="" close-text="Close" />
+                                                   <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open($event, '2')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span></div>
+                    </div>    
+                 
+
+                   <div class="form-group">
+                      <input class="form-control" type="text"  name="s_expire"
+                         placeholder="Expire days" ng-model="survey.expiryPeriod" required numvalid>
+                        <div ng-show="!publishForm.$valid && publishForm.$submitted">
+                                <div class="alert alert-danger" ng-show="publishForm.s_expire.$error.numvalid">                            
+                                         <a>Please input number( > 0)</a>            
+                                  </div>
+                        </div>
+
+                   </div>
+                   </div>
+                </div>
+
+                <div class="col-md-6 region">
+                <div>
+                    <legend>Reward</legend>
+                    <div class="form-group">
+                      <input class="form-control" type="text" 
+                         placeholder="Name" ng-model="survey.surveyRewardDto.rewardName">
+                   </div>
+
+                   <div class="form-group">
+                      <textarea class="form-control" 
+                         placeholder="Description" ng-model="survey.surveyRewardDto.rewardDescription"></textarea> 
+                   </div>
+
+                   <div class="form-group">
+                      <input class="form-control" type="text" 
+                         placeholder="Code" ng-model="survey.surveyRewardDto.rewardCode">
+                   </div>
+
+                   <div class="form-group">
+                      <input class="form-control" type="text" 
+                         placeholder="Value" ng-model="survey.surveyRewardDto.rewardValue" name="r_val" required numvalid>
+                       <div ng-show="!publishForm.$valid && publishForm.$submitted">
+                                <div class="alert alert-danger" ng-show="publishForm.r_val.$error.numvalid">                           
+                                         <a>Please input number( > 0)</a>        
+                                  </div>
+                        </div>
+
+                   </div>
+
+                   <div class="form-group">
+                      <input class="form-control" name="r_expire" type="text" 
+                         placeholder="Expire days" ng-model="survey.surveyRewardDto.expiryPeriodInDays" required numvalid >
+                         <div ng-show="!publishForm.$valid && publishForm.$submitted">
+                                <div class="alert alert-danger" ng-show="publishForm.r_expire.$error.numvalid">                            
+                                         <a>Please input number( > 0)</a>            
+                                  </div>
+                        </div>
+                      
+
+                   </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="row form-group modal-bottom">
+              <div class="col-sm-offset-2 col-sm-10">
+                <div class="pull-right">                 
+                  <input type="submit" id="btn-login" ng-click="confirm();" class="btn btn-success" value="Publish">                
+                </div>
+              </div>
+            </div>            
+
+            </form>
+
+</div>
+<button class="cancel modal-close" ng-click="cancel();"><i class="fa fa-times"></i></button>

@@ -1,0 +1,65 @@
+
+            <nav class="row2 navbar navbar-default" role="navigation">
+                <div>
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header" >
+                        <button type="button" class="navbar-toggle collapsed" >
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div  ng-if="!loggin" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right" menu>
+                            <li class="page-scroll sign-links active" >
+                                <a href="#/signin">LOG IN</a>
+                            </li>
+                            <li class="page-scroll sign-links">
+                                <a href="#/signup">SIGN UP</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                    <div ng-if="loggin" class="collapse navbar-collapse " id="dashheader" collapse="isCollapsed">
+                         <ul class="nav navbar-nav left  visible-lg" menu>
+                            <li ng-show="show" class="active"><a href="#/dashboard/create/{{sid}}">Create</a></li>
+                            <li ng-show="show" class="reportmenu" ng-click="open('sm');"><a >Report</a></li>
+                            <li ng-show="show"><a href="#">Profile</a></li>
+                            <li class="navbar-form">                               
+                                    <div class="input-group ">
+                                     <autocomplete ng-model="result" attr-placeholder="Search survey" click-activation="true" data="suverylist" on-type="doSomething" on-select="doSelect"></autocomplete>
+                                    </div>                                
+                            </li>                        
+                           <!-- <li class="sign-out"><a href="#/signout">Logout</a></li> -->
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right right">
+                            <li class="avatar"><a href="#">
+                                <span><i class="fa fa-user"></i></span>
+                            </a></li>
+                            <li class="sign-out"><a href="#/signout">Logout</a></li>
+                        </ul>
+
+                        <ul class="nav navbar-nav left hidden-lg" menu>
+                            <li class="active"><a href="#/dashboard/create/{{sid}}">Create</a></li>
+                            <li class="reportmenu" ng-click="open('sm');"><a>Report</a></li>
+                            <li><a href="#">Profile</a></li>
+                                         
+                            <li class="sign-out"><a href="#/signout">Logout</a></li>
+                            <li class="navbar-form">
+                                <div class="input-group ">
+                                     <autocomplete ng-model="result" attr-placeholder="Search" click-activation="true" data="suverylist" on-type="doSomething" on-select="doSelect"></autocomplete>
+                                    </div>  
+                            </li>           
+                        </ul>
+
+
+                    </div><!-- /.navbar-collapse -->
+                </div>
+            </nav>
+
+

@@ -1,0 +1,9 @@
+<ul>
+	<li ng-repeat="n in bindModel"  >
+	 <h5 class="radio-text">{{n.value}}</h5>
+	 <div class="radio" >
+		<input type="radio" name="{{ngName}}" id="{{ngName}}-n{{$index}}" ng-change="changed(selected)" ng-model="selected" value="{{$index}}">		
+        <label for="{{ngName}}-n{{$index}}"><span></span></label>
+      </div>
+    </li>
+</ul>

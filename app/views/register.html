@@ -1,0 +1,156 @@
+<div class="row" id="register">
+
+    <div class="col-md-8 login-outer pull-right">
+        <div class="panel panel-default login-inner">
+
+          		<div class="login-title">
+		                <h2>Register Company</h2>
+		        </div>
+		        <div class="panel-body">
+                <form  ng-show="registered==''"  accept-charset="UTF-8" ng-submit="register()" role="form" name="form" novalidate>
+                <fieldset>     		  
+		            
+		            <div class="col-md-6">
+
+		            	<div class="form-group">                        
+	                        <input class="form-control" placeholder="Name" ng-model="name" name="name"  focus-on="true"  type="text" required >
+	                        <div ng-show="!form.$valid && form.$submitted">
+	                            <div class="alert alert-danger" ng-show="form.name.$invalid">
+	                                <a>Please input Name</a>
+	                            </div>
+	                        </div>
+                    	</div>
+
+		            	<div class="form-group">                        
+	                        <input class="form-control" placeholder="Model" ng-model="model" name="model"    type="text" required>
+	                        <div ng-show="!form.$valid && form.$submitted">
+	                            <div class="alert alert-danger" ng-show="form.model.$invalid">
+	                                <a >Please input model</a>
+	                            </div>
+	                        </div>                        
+	                    </div>
+
+	                    <div class="form-group">                        
+	                        <input class="form-control" placeholder="Country" ng-model="country" name="country" type="text" required>
+	                       
+	                       <div ng-show="!form.$valid && form.$submitted">
+	                            <div class="alert alert-danger" ng-show="form.country.$invalid">
+	                                <a >Please input country</a>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    <div class="form-group">                        
+	                        <input class="form-control" placeholder="State" ng-model="state" name="state" type="text" required>
+	                       
+	                       <div ng-show="!form.$valid && form.$submitted">
+	                            <div class="alert alert-danger" ng-show="form.state.$invalid">
+	                                <a >Please input state</a>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    <div class="form-group">                        
+	                        <input class="form-control" placeholder="Zip" ng-model="zip" name="zip" type="text" required>
+	                       
+	                       <div ng-show="!form.$valid && form.$submitted">
+	                            <div class="alert alert-danger" ng-show="form.zip.$invalid">
+	                                <a >Please input zip</a>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    
+	                    <div class="form-group">                        
+	                        <input class="form-control" placeholder="Phone Number" ng-model="phonenumber" name="phonenumber" type="text" required>
+	                       
+	                       <div ng-show="!form.$valid && form.$submitted">
+	                            <div class="alert alert-danger" ng-show="form.phonenumber.$invalid">
+	                                <a >Please input phone number</a>
+	                            </div>
+	                        </div>
+	                    </div>
+	                         	
+		            </div>
+
+		            <div class="col-md-6">
+
+		            	<div class="form-group">                        
+	                        <input class="form-control" placeholder="Email" ng-model="email" name="email"  focus-me=""  type="text" required emailvalid>
+	                        <div ng-show="!form.$valid && form.$submitted">
+	                            <div class="alert alert-danger" ng-show="form.email.$invalid || form.input.$error.emailvalid">
+	                                <a >Please input correct email.</a>
+	                            </div>
+	                        </div>
+                    	</div>
+
+		            	<div class="form-group">                        
+	                        <input class="form-control" placeholder="Type" ng-model="type" name="type" type="text" required>
+	                        <div ng-show="!form.$valid && form.$submitted">
+	                            <div class="alert alert-danger" ng-show="form.type.$invalid ">
+	                                <a >Please input type</a>
+	                            </div>
+	                        </div>                        
+	                    </div>
+
+	                    <div class="form-group">                        
+	                        <input class="form-control" placeholder="City" ng-model="city" name="city" type="text" required>
+	                       
+	                       <div ng-show="!form.$valid && form.$submitted">
+	                            <div class="alert alert-danger" ng-show="form.city.$invalid">
+	                                <a >Please input city</a>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    <div class="form-group">                        
+	                        <input class="form-control" placeholder="Street Address" ng-model="streetAddress" name="streetAddress" type="text" required>
+	                       
+	                       <div ng-show="!form.$valid && form.$submitted">
+	                            <div class="alert alert-danger" ng-show="form.streetAddress.$invalid">
+	                                <a >Please input street address</a>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    
+	                    <div class="form-group">                        
+	                        <input class="form-control" placeholder="Website" ng-model="website" name="website" type="text" required>
+	                       
+	                       <div ng-show="!form.$valid && form.$submitted">
+	                            <div class="alert alert-danger" ng-show="form.website.$invalid">
+	                                <a >Please input website</a>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    <div class="form-group">                        
+	                        <input class="form-control" placeholder="Image url" ng-model="imagefile" name="imagefile" type="file" valid-file required>
+	                       
+	                       <div ng-show="!form.$valid && form.$submitted">
+	                            <div class="alert alert-danger" ng-show="form.imagefile.$invalid">
+	                                <a >Please input Image</a>
+	                            </div>
+	                        </div>
+	                    </div>
+
+
+		            </div>
+
+		            <div class="col-md-12">
+		            	<div class="form-group">
+		            		<input class="btn btn-lg btn-info btn-block" type="submit" value="Register Company">
+		            	</div>
+		            </div>
+
+                </fieldset>
+                </form>    
+	                <div ng-show="registered!=''">
+	                	<div class="alert alert-success">
+			            	<strong ><span>{{registered}}</span></strong><br>
+			            	Click <a href="#/signin">here</a> to signin. 
+			            </div>
+	                </div>
+          		</div>
+        </div>
+    </div>
+</div>

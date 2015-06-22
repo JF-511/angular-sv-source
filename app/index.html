@@ -1,0 +1,168 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
+    <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css" />
+    <link rel="stylesheet" href="bower_components/jscrollpane/style/jquery.jscrollpane.css" />
+    <link rel="stylesheet" href="bower_components/ng-scrollbar/dist/ng-scrollbar.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->    
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">     
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="odilinkApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+	
+	<!-- Navigation -->
+    <header ng-controller="HeaderCtrl">
+         <div class="container" ng-include="'views/partials/header.html'"></div>  
+    </header>
+    
+	
+    <!-- Add your site or application content here -->
+    <div class="container">
+        <settings></settings>
+      <div class="row" ng-view=""></div>
+	</div>
+     
+
+	 <!-- Footer -->
+    <footer>        
+      
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visble-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angularjs/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="bower_components/angular-dragdrop/src/angular-dragdrop.js"></script>
+    <script src="bower_components/angular-ui-select/dist/select.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-ui-sortable/sortable.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
+    <script src="bower_components/angular-bootstrap-slider/slider.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+    <script src="bower_components/jscrollpane/script/jquery.mousewheel.js"></script>
+    <script src="bower_components/jscrollpane/script/mwheelIntent.js"></script>
+    <script src="bower_components/jscrollpane/script/jquery.jscrollpane.js"></script>
+    <script src="bower_components/jscrollpane/script/jquery.jscrollpane.min.js"></script>
+    <script src="bower_components/angular-scroll-pane/dist/angular-jscrollpane.min.js"></script>
+    <script src="bower_components/ng-scrollbar/dist/ng-scrollbar.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->    
+
+    <!-- build:js(.) scripts/cloud.js -->    
+    <!-- endbuild -->
+
+    
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/d3.layout.cloud.js"></script>
+        <script src="scripts/autocomplete.js"></script>
+        <script src="scripts/timepickerpop.js"></script>
+        <script src="scripts/app.js"></script>        
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/signin.js"></script>
+        <script src="scripts/controllers/signup.js"></script>
+        <script src="scripts/services/odsession.js"></script>
+        <script src="scripts/services/enviroment.js"></script>
+        <script src="scripts/services/language.js"></script>
+        <script src="scripts/services/odapi.js"></script>
+        <script src="scripts/services/odlink.js"></script>
+        <script src="scripts/directives/contenteditable.js"></script>
+        <script src="scripts/directives/uservalid.js"></script>              
+        <script src="scripts/directives/phonevalid.js"></script>
+        <script src="scripts/directives/emailvalid.js"></script>
+        <script src="scripts/directives/namevalid.js"></script>
+        <script src="scripts/directives/notequals.js"></script>
+        <script src="scripts/controllers/header.js"></script>
+        <script src="scripts/controllers/signout.js"></script>
+        <script src="scripts/directives/focusme.js"></script>        
+        <script src="scripts/directives/feedbackicon.js"></script>
+        <script src="scripts/directives/numbericscale.js"></script>
+        <script src="scripts/directives/ngconfirmclick.js"></script>
+        <script src="scripts/controllers/publishmodal.js"></script>
+        <script src="scripts/directives/numvalid.js"></script>
+        <script src="scripts/alertify.js"></script>
+        <script src="scripts/directives/scroll.js"></script>
+        <script src="scripts/directives/showdropmenu.js"></script>
+        <script src="scripts/directives/settings.js"></script>
+        <script src="scripts/services/localstorage.js"></script>
+        <script src="scripts/controllers/report.js"></script>
+        <script src="scripts/directives/menu.js"></script>
+        <script src="scripts/directives/arcchart.js"></script>
+   <!--     <script src="scripts/services/d3service.js"></script> -->
+        <script src="scripts/directives/movepanel.js"></script>
+        <script src="scripts/directives/fixedmenu.js"></script>
+        <script src="scripts/services/focus.js"></script>                
+        <script src="scripts/controllers/calendarmodal.js"></script>
+        <script src="scripts/directives/otherclick.js"></script>
+        <script src="scripts/controllers/register.js"></script>
+        <script src="scripts/directives/validfile.js"></script>
+        <script src="scripts/controllers/reply.js"></script>
+        <!-- endbuild -->
+        
+
+        <script type="text/javascript">
+        //override defaults
+            alertify.defaults.transition = "slide";
+            alertify.defaults.theme.ok = "btn btn-success";
+            alertify.defaults.theme.cancel = "btn btn-default";            
+        </script>
+
+
+
+</body>
+</html>
